@@ -7,10 +7,7 @@ let notes = ["first note"];
 
 // health check endpoint
 app.get("/health", (req, res) => {
-  res.json({
-    status: "healthy",
-    environment: process.env.NODE_ENV || "development"
-  });
+  res.json({ status: "healthy", environment: process.env.NODE_ENV || "development" });
 });
 
 // get all notes
@@ -18,18 +15,11 @@ app.get("/notes", (req, res) => {
   res.json(notes);
 });
 
-// add new note
+// add note
 app.post("/notes", (req, res) => {
   const { text } = req.body;
   notes.push(text);
   res.json({ added: text });
 });
-
-// choose port
-const app = require("./app");
-
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Server running on port ${port}`));
-
 
 module.exports = app;
