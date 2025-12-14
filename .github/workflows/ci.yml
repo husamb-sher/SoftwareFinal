@@ -148,6 +148,6 @@ jobs:
         with:
           context: .
           push: false
-          tags: ${{ github.repository }}:test
+          tags: notes-api:test
           cache-from: type=gha
           cache-to: type=gha,mode=max
