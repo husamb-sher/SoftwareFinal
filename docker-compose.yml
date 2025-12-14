@@ -40,7 +40,7 @@ services:
       dockerfile: Dockerfile
     container_name: notes-api-production
     ports:
-      - "6000:3000"     # external:internal
+      - "7000:3000"    # external:internal
     environment:
       - NODE_ENV=production
       - PORT=3000
